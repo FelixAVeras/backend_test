@@ -10,5 +10,9 @@ public class DeviceSecretValidatorService
     };
 
     public bool ValidateDeviceSecret(string deviceSecret) 
-        => ValidSecrets.Contains(deviceSecret);
+    {
+        if (ValidSecrets.Contains(deviceSecret)) return false;
+
+        return true;
+    }
 }
